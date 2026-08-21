@@ -1,0 +1,16 @@
+# 运行时生成文件
+history.json
+学习汇总.html
+每日诗歌推荐/
+output/
+memory.md
+.workbuddy/
+*.log
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 编辑器
+.vscode/
+.idea/

@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>满江红·怒发冲冠 - 岳飞 深度解读</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Noto Serif SC", "Source Han Serif SC", "SimSun", serif;
+            background-color: #fcfaf2; /* 宣纸白，干净、素雅 */
+            color: #2c3e50;
+            line-height: 1.8;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border: 1px solid #f0eae0;
+        }
+        
+        .section-title {
+            font-size: 1.4rem;
+            color: #1f364d;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #2c4f6c; /* 黛蓝线条 */
+            display: block;
+        }
+        
+        .icon {
+            font-size: 1.3rem;
+        }
+        
+        /* 诗人信息卡片：黛蓝渐变 */
+        .poet-card {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 20px;
+            align-items: center;
+            background: linear-gradient(135deg, #2c4f6c 0%, #1f364d 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        
+        .poet-avatar {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+        
+        .poet-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .poet-info p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+        
+        .poet-title {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            text-align: right;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .info-item {
+            background: #fdfcf7;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #f4eff2;
+        }
+        
+        .info-item .label {
+            color: #7f8c8d;
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+        }
+        
+        .info-item .value {
+            font-weight: bold;
+            color: #1f364d;
+            font-size: 1.1rem;
+        }
+        
+        /* 创作背景 */
+        .background-content {
+            background: #fbfbfb;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #2c4f6c;
+        }
+        
+        .background-content p {
+            margin-bottom: 12px;
+        }
+        
+        .highlight-box {
+            background: #fdfaf2;
+            padding: 18px;
+            border-radius: 6px;
+            margin-top: 20px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .highlight-box strong {
+            color: #8a6d1c;
+        }
+        
+        /* 时代背景 */
+        .era-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .era-list li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+        
+        .era-list li:before {
+            content: "•";
+            position: absolute;
+            left: 5px;
+            color: #2c4f6c;
+            font-size: 1.4rem;
+            top: 8px;
+        }
+        
+        /* 情感曲线图 */
+        .emotion-chart {
+            background: #fafafa;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 200px;
+            margin-bottom: 20px;
+        }
+
+        .chart-line {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .emotion-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: #666;
+            padding: 0 10px;
+        }
+        
+        .emotion-phases {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .phase {
+            text-align: center;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .phase-start {
+            background-color: #f9f1db; /* 晚霞金 */
+            border-left: 4px solid #c9a054;
+        }
+
+        .phase-middle {
+            background-color: #edf6f0; /* 竹青/晴川绿 */
+            border-left: 4px solid #2e6943;
+        }
+
+        .phase-end {
+            background-color: #f0f4f8; /* 暮色灰蓝 */
+            border-left: 4px solid #4a6572;
+        }
+
+        .phase h4 {
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #1a365d;
+        }
+
+        .phase p {
+            font-size: 0.9rem;
+            color: #444;
+            line-height: 1.6;
+        }
+        
+        /* 逐句解读 */
+        .verse-card {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 1px solid #eef2f5;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.01);
+        }
+
+        .verse-text {
+            font-size: 1.4rem;
+            color: #1a365d;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eef2f5;
+            letter-spacing: 2px;
+        }
+        
+        .verse-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .detail-box h5 {
+            color: #7f8c8d;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .detail-box p {
+            color: #2c3e50;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .interpretation {
+            background: #fbfbfb;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 3px solid #2c4f6c;
+        }
+
+        .interpretation h5 {
+            color: #2c4f6c;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+        
+        /* 核心名句特殊样式：晴空蓝方案 */
+        .core-verse {
+            background-color: #eef7fa; /* 晴空蓝底色 */
+            border: 1px solid #bce1f2;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .core-verse .verse-text {
+            color: #1a6fa5; /* 亮玺蓝 */
+            border-bottom-color: #d2ecf7;
+        }
+
+        .core-verse .detail-box {
+            background: #ffffff;
+            border: 1px solid #e3f2fd;
+        }
+
+        .core-verse .detail-box h5 {
+            color: #1a6fa5;
+            opacity: 0.8;
+        }
+
+        .core-verse .detail-box p {
+            color: #1f364d;
+        }
+
+        .core-verse .interpretation {
+            background: #ffffff;
+            border-left: 3px solid #1a6fa5;
+            border-top: 1px solid #e3f2fd;
+            border-right: 1px solid #e3f2fd;
+            border-bottom: 1px solid #e3f2fd;
+        }
+
+        .core-verse .interpretation h5 {
+            color: #1a6fa5;
+        }
+
+        .core-verse .interpretation p {
+            color: #2c3e50;
+        }
+
+        .core-badge {
+            display: inline-block;
+            background: #1a6fa5;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        /* 艺术特色 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .feature-item {
+            background: #fdfcf7;
+            padding: 22px;
+            border-radius: 8px;
+            border: 1px solid #f4eff2;
+        }
+
+        .feature-item h4 {
+            color: #1f364d;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-left: 3px solid #2c4f6c;
+            padding-left: 8px;
+        }
+        
+        /* 千古名句 */
+        .famous-quotes {
+            margin: 25px 0;
+        }
+        
+        .quote-item {
+            background: #f8fafc;
+            color: #2c3e50;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            border-left: 4px solid #1f364d;
+            border-top: 1px solid #edf2f7;
+            border-right: 1px solid #edf2f7;
+            border-bottom: 1px solid #edf2f7;
+        }
+
+        .quote-text {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #1a365d;
+            letter-spacing: 1px;
+        }
+
+        .quote-desc {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* 历代评价 */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .review-card {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid #eef2f5;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.01);
+        }
+
+        .review-card h4 {
+            color: #1f364d;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+            border-bottom: 1px dashed #edf2f7;
+            padding-bottom: 6px;
+        }
+
+        .review-card p {
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            font-style: italic;
+        }
+        
+        /* 推荐阅读方式：茶色/沉香色方案 */
+        .reading-guide {
+            background-color: #f4f0ea; /* 沉香色底色 */
+            color: #4a3728;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #e6ded4;
+        }
+
+        .reading-guide h3 {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            color: #5c4738; /* 深茶色 */
+            border-bottom: 1px solid #e6ded4;
+            padding-bottom: 10px;
+        }
+
+        .reading-steps {
+            list-style: none;
+            counter-reset: step;
+        }
+
+        .reading-steps li {
+            padding: 15px 0;
+            padding-left: 45px;
+            position: relative;
+            border-bottom: 1px solid #e6ded4;
+            line-height: 1.7;
+        }
+
+        .reading-steps li:last-child {
+            border-bottom: none;
+        }
+
+        .reading-steps li:before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            width: 28px;
+            height: 28px;
+            background: #5c4738;
+            color: #f4f0ea;
+            border-radius: 50%;
+            display: block;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            top: 12px;
+        }
+        
+        /* 诗歌全文展示 - 纯正白宣纸感 */
+        .full-poem {
+            background: #ffffff;
+            padding: 50px 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 30px;
+            border: 1px solid #ebdcc5; /* 微微带有一点古风边框感 */
+            box-shadow: 0 4px 20px rgba(180,160,120,0.05);
+        }
+
+        .full-poem h2 {
+            font-size: 2.4rem;
+            margin-bottom: 35px;
+            color: #1a365d;
+            letter-spacing: 12px;
+            font-weight: 600;
+        }
+
+        .poem-content {
+            font-size: 1.35rem;
+            line-height: 2.6;
+            max-width: 650px;
+            margin: 0 auto;
+            letter-spacing: 4px;
+            color: #2c3e50;
+        }
+
+        .poem-content p {
+            margin-bottom: 10px;
+        }
+
+        .poem-author {
+            margin-top: 35px;
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            letter-spacing: 6px;
+            font-weight: 400;
+        }
+        
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .info-grid,
+            .verse-details,
+            .feature-grid,
+            .reviews-grid,
+            .emotion-phases {
+                grid-template-columns: 1fr;
+            }
+            
+            .poet-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 诗歌全文 -->
+        <div class="full-poem">
+            <h2>满江红</h2>
+            <div class="poem-content">
+                <p>怒发冲冠，凭栏处、潇潇雨歇。</p>
+                <p>抬望眼、仰天长啸，壮怀激烈。</p>
+                <p>三十功名尘与土，八千里路云和月。</p>
+                <p>莫等闲、白了少年头，空悲切。</p>
+                <p>靖康耻，犹未雪。</p>
+                <p>臣子恨，何时灭。</p>
+                <p>驾长车，踏破贺兰山缺。</p>
+                <p>壮志饥餐胡虏肉，笑谈渴饮匈奴血。</p>
+                <p>待从头、收拾旧山河，朝天阙。</p>
+            </div>
+            <div class="poem-author">—— 南宋 · 岳飞</div>
+        </div>
+
+        <!-- 诗人生平与创作背景 -->
+        <div class="section">
+            <h2 class="section-title"><span class="icon">🏔️</span>岳飞生平与《满江红》创作背景介绍</h2>
+            
+            <div class="poet-card">
+                <div class="poet-avatar">🗡️</div>
+                <div class="poet-info">
+                    <h3>岳飞</h3>
+                    <p>南宋抗金名将、民族英雄</p>
+                </div>
+                <div class="poet-title">抗金名将</div>
+            </div>
+            
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="label">生卒年</div>
+                    <div class="value">1103年—1142年</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">创作年代</div>
+                    <div class="value">约1136年（岳飞驻军鄂州时）</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">朝代</div>
+                    <div class="value">南宋 · 初年</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">创作地点</div>
+                    <div class="value">鄂州（今湖北武昌）</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 创作背景 -->
+        <div class="section">
+            <h2 class="section-title"><span class="icon">📖</span>创作背景</h2>
+            <div class="background-content">
+                <p>《满江红·怒发冲冠》是南宋抗金名将岳飞的代表作，创作于岳飞率军北伐、立志收复中原失地的时期。这首词以慷慨激昂的笔触，抒发了岳飞对国仇家恨的悲愤，以及收复河山、报效国家的坚定决心。</p>
+                <p>靖康二年（1127年），金兵攻破汴京，掳走徽、钦二帝，北宋灭亡，史称“靖康之变”。宋室南渡后，岳飞立志北伐，收复失地。他率领的“岳家军”纪律严明，战斗力强，多次击败金军，收复襄阳、郢州等失地。然而，南宋朝廷以宋高宗赵构和秦桧为首的主和派，担心迎回二帝会威胁自己的地位，因此屡次阻挠岳飞的北伐大业。</p>
+                <p>岳飞在鄂州（今湖北武昌）驻军期间，面对朝廷的掣肘和壮志难酬的困境，满怀悲愤地写下了这首《满江红》。词中“靖康耻，犹未雪”直指国耻，“壮志饥餐胡虏肉”则表达了彻底消灭敌人的决心。</p>
+                <div class="highlight-box">
+                    <strong>💡 核心矛盾：</strong>岳飞精忠报国、矢志北伐的壮志，与南宋朝廷求和苟安、自毁长城的政治现实之间的尖锐矛盾。
+                </div>
+            </div>
+        </div>
+
+        <!-- 时代背景 -->
+        <div class="section">
+            <h2 class="section-title"><span class="icon">🌍</span>时代背景（南宋初年）</h2>
+            <ul class="era-list">
+                <li><strong>靖康之变（1127年）：</strong>金兵攻破汴京，掳走徽、钦二帝，北宋灭亡。这是中国历史上著名的国耻事件，也是岳飞毕生要雪洗的耻辱。</li>
+                <li><strong>宋室南渡：</strong>赵构在应天府（今河南商丘）即位，建立南宋，定都临安（今杭州）。南宋朝廷偏安江南，不思进取，主和派占据上风。</li>
+                <li><strong>岳飞抗金：</strong>岳飞率领岳家军，在郾城、颍昌等地大败金军，收复襄阳、郢州等失地，直逼开封。金人感叹“撼山易，撼岳家军难”。</li>
+                <li><strong>十二道金牌：</strong>就在岳飞即将收复开封之际，宋高宗连发十二道金牌，强令岳飞班师。岳飞悲愤交加，仰天长叹：“十年之功，毁于一旦！”</li>
+                <li><strong>风波亭冤案：</strong>秦桧以“莫须有”罪名陷害岳飞，岳飞与子岳云、部将张宪一同被害于风波亭，年仅39岁。</li>
+            </ul>
+        </div>
+
+        <!-- 全诗情感变化曲线 -->
+        <div class="section">
+            <h2 class="section-title"><span class="icon">📊</span>全诗情感变化曲线</h2>
+            <p style="margin-bottom: 20px; color: #666;">上面是背景介绍，接下来我用图表展示这首词的情感起伏——从激愤悲慨到壮怀激烈，再到悲壮决心：</p>
+
+            <div class="emotion-phases">
+                <div class="phase phase-start">
+                    <h4>激愤悲慨</h4>
+                    <p>开篇“怒发冲冠”直抒胸臆，表达对国仇家恨的愤怒。凭栏远眺，雨后初歇，更添悲凉。</p>
+                </div>
+                <div class="phase phase-middle">
+                    <h4>壮怀激烈</h4>
+                    <p>“三十功名尘与土”展现功名如尘的豁达，“八千里路云和月”描绘征战艰辛，壮志未酬的悲愤。</p>
+                </div>
+                <div class="phase phase-end">
+                    <h4>悲壮决心</h4>
+                    <p>“壮志饥餐胡虏肉”表达收复失地的坚定决心，誓要雪洗靖康之耻，重整山河。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 逐句深度解读 -->
+        <div class="section">
+            <h2 class="section-title"><span class="icon">📜</span>逐句深度解读</h2>
+            <p style="margin-bottom: 25px; color: #666;">好，背景和情感曲线已经呈现出来了。接下来是这首词最核心的部分——<strong>逐句深度解读</strong>，我用卡片形式把每句词的内涵、手法和背后的情感层层展开：</p>
+
+            <!-- 上阕 -->
+            <div class="verse-card">
+                <div class="verse-text">怒发冲冠，凭栏处、潇潇雨歇。</div>
+                <div class="verse-details">
+                    <div class="detail-box">
+                        <h5>字面意思</h5>
+                        <p>愤怒得头发直竖，把帽子都顶起来了。独自凭栏远望，急骤的雨刚刚停歇。</p>
+                    </div>
+                    <div class="detail-box">
+                        <h5>修辞手法</h5>
+                        <p><strong>夸张：</strong>“怒发冲冠”是极度夸张的写法，形容愤怒到极点。<strong>借景抒情：</strong>“潇潇雨歇”以雨后初晴的景象，烘托出一种悲凉肃杀的气氛。</p>
+                    </div>
+                </div>
+                <div class="interpretation">
+                    <h5>深度解读</h5>
+                    <p>开篇即以雷霆万钧之势，将读者带入一种极度悲愤的情感氛围。“怒发冲冠”不仅是夸张，更是岳飞内心激烈情感的外化。凭栏远眺，本是文人雅士的闲适之举，但在这里却充满了国破家亡的悲怆。雨歇之后，天地间一片肃杀，更添英雄末路的苍凉。</p>
+                </div>
+            </div>
+
+            <div class="verse-card">
+                <div class="verse-text">抬望眼、仰天长啸，壮怀激烈。</div>
+                <div class="verse-details">
+                    <div class="detail-box">
+                        <h5>字面意思</h5>
+                        <p>抬起头，放眼远望，仰面朝天放声长啸，胸中的豪情壮志激烈翻涌。</p>
+                    </div>
+                    <div class="detail-box">
+                        <h5>修辞手法</h5>
+                        <p><strong>动作描写：</strong>“抬望眼”、“仰天长啸”两个动作，将人物内心的激昂情绪具象化。<strong>直抒胸臆：</strong>“壮怀激烈”直接点明情感基调。</p>
+                    </div>
+                </div>
+                <div class="interpretation">
+                    <h5>深度解读</h5>
+                    <p>“抬望眼”是向远处眺望，望的是沦陷的故国河山；“仰天长啸”是向苍天倾诉，诉的是壮志难酬的悲愤。这两个动作极具画面感，一个顶天立地的英雄形象跃然纸上。“壮怀激烈”四字，概括了岳飞一生矢志北伐、收复中原的豪情壮志。</p>
+                </div>
+            </div>
+
+            <!-- 核心名句 -->
+            <div class="core-verse">
+                <div class="core-badge">核心名句</div>
+                <div class="verse-text">三十功名尘与土，八千里路云和月。</div>
+                <div class="verse-details">
+                    <div class="detail-box">
+                        <h5>字面意思</h5>
+                        <p>三十年来所建立的功名，如同尘土一般微不足道；转战八千里的征途，只有天上的云和月相伴。</p>
+                    </div>
+                    <div class="detail-box">
+                        <h5>修辞手法</h5>
+                        <p><strong>对仗：</strong>“三十功名”对“八千里路”，“尘与土”对“云和月”，工整而富有张力。<strong>比喻：</strong>将功名比作尘土，展现淡泊名利的胸怀。<strong>意象叠加：</strong>“云和月”既是实景，又象征征战岁月的孤寂与高洁。</p>
+                    </div>
+                </div>
+                <div class="interpretation">
+                    <h5>深度解读</h5>
+                    <p>这两句是岳飞对自己半生戎马的总结。他并非看重个人功名，而是将一切视为过眼云烟。真正的追求，是“还我河山”的壮志。八千里转战，云月为伴，既写出了征战的艰辛，也写出了英雄的孤高。这种“功名如尘”的境界，正是儒家“修身齐家治国平天下”的最高体现。</p>
+                </div>
+            </div>
+
+            <div class="core-verse">
+                <div class="core-badge">千古警句</div>
+                <div class="verse-text">莫等闲、白了少年头，空悲切。</div>
+                <div class="verse-details">
+                    <div class="detail-box">
+                        <h5>字面意思</h5>
+                        <p>不要轻易虚度光阴，等到头发白了，才徒然悲切。</p>
+                    </div>
+                    <div class="detail-box">
+                        <h5>修辞手法</h5>
+                        <p><strong>警策：</strong>以劝诫的语气，发出振聋发聩的警示。<strong>借代：</strong>“白了少年头”借指年华老去，功业未成。</p>
+                    </div>
+                </div>
+                <div class="interpretation">
+                    <h5>深度解读</h5>
+                    <p>这句词超越了个人情感，成为千古警句。它既是岳飞对自己的鞭策，也是对世人的告诫。在国难当头之际，时间就是生命，拖延就是犯罪。这句词之所以流传千古，是因为它道出了一个普遍的人生哲理：珍惜时光，及时努力，否则悔之晚矣。</p>
+                </div>
+            </div>
+
+            <!-- 下阕 -->
+            <div class="verse-card">
+                <div class="verse-text">靖康耻，犹未雪。臣子恨，何时灭。</div>
+                <div class="verse-details">
+                    <div class="detail-box">
+                        <h5>字面意思</h5>
+                        <p>靖康年间的国耻，至今还没有洗雪；作为臣子的愤恨，什么时候才能熄灭！</p>
+                    </div>
+                    <div class="detail-box">
+                        <h5>修辞手法</h5>
+                        <p><strong>短句急促：</strong>四字一顿，节奏急促有力，如战鼓擂响，表达强烈的悲愤。<strong>设问：</strong>“何时灭”是问天，也是问己，表达悲愤的深重与绵长。</p>
+                    </div>
+                </div>
+                <div class="interpretation">
+                    <h5>深度解读</h5>
+                    <p>这四句如惊雷炸响，直指全词的核心——靖康之耻。岳飞将个人的悲愤与国家的耻辱融为一体，“臣子恨”既是臣子对君王的忠贞，也是子民对祖国的热爱。这种恨，不是私仇，而是国恨家仇，是民族大义。短促的节奏，如同心跳的鼓点，催人奋进，誓雪国耻。</p>
+                </div>
+            </div>
+
+            <div class="core-verse">
+                <div class="core-badge">英雄誓言</div>
+                <div class="verse-text">驾长车，踏破贺兰山缺。</div>
+                <div class="verse-details">
+                    <div class="detail-box">
+                        <h5>字面意思</h5>
+                        <p>我要驾着战车，踏破贺兰山的缺口，直捣黄龙。</p>
+                    </div>
+                    <div class="detail-box">
+                        <h5>修辞手法</h5>
+                        <p><strong>借代：</strong>“贺兰山”借指金人老巢，代指敌人的巢穴。<strong>夸张：</strong>“踏破”二字，气势磅礴，展现必胜的信念。</p>
+                    </div>
+                </div>
+                <div class="interpretation">
+                    <h5>深度解读</h5>
+                    <p>“驾长车”是出征的号角，“踏破贺兰山缺”是必胜的誓言。贺兰山在西北，而金人在东北，这里用“贺兰山”泛指敌人巢穴，是古诗词中常见的地理借代手法。这句词展现了岳飞作为军事统帅的豪迈气概和坚定信念：不破敌营，誓不还朝。</p>
+                </div>
+            </div>
+
+            <div class="core-verse">
+                <div class="core-badge">壮志豪情</div>
+                <div class="verse-text">壮志饥餐胡虏肉，笑谈渴饮匈奴血。</div>
+                <div class="verse-details">
+                    <div class="detail-box">
+                        <h5>字面意思</h5>
+                        <p>怀着壮志，饿了就吃敌人的肉；谈笑之间，渴了就喝敌人的血。</p>
+                    </div>
+                    <div class="detail-box">
+                        <h5>修辞手法</h5>
+                        <p><strong>夸张：</strong>以“餐肉饮血”的极端表达，展现对敌人的刻骨仇恨。<strong>对仗：</strong>“饥餐”对“渴饮”，“胡虏肉”对“匈奴血”，工整而富有冲击力。<strong>借代：</strong>“胡虏”、“匈奴”借指金人侵略者。</p>
+                    </div>
+                </div>
+                <div class="interpretation">
+                    <h5>深度解读</h5>
+                    <p>这两句词是岳飞对敌人最强烈的仇恨表达。在冷兵器时代，这种表达方式虽然血腥，但却是最真实、最有力的情感宣泄。它不是宣扬暴力，而是表达一种誓死抗争、彻底消灭侵略者的决心。这种“食肉寝皮”的仇恨，源于靖康之变的国耻，源于山河破碎的悲痛，源于生灵涂炭的惨状。</p>
+                </div>
+            </div>
+
+            <div class="core-verse">
+                <div class="core-badge">赤胆忠心</div>
+                <div class="verse-text">待从头、收拾旧山河，朝天阙。</div>
+                <div class="verse-details">
+                    <div class="detail-box">
+                        <h5>字面意思</h5>
+                        <p>等到重新收复旧日的山河，再向朝廷报捷。</p>
+                    </div>
+                    <div class="detail-box">
+                        <h5>修辞手法</h5>
+                        <p><strong>借代：</strong>“天阙”借指朝廷、皇帝。<strong>象征：</strong>“收拾旧山河”象征恢复国家统一，重振山河。</p>
+                    </div>
+                </div>
+                <div class="interpretation">
+                    <h5>深度解读</h5>
+                    <p>这是全词的收束，也是岳飞一生的终极目标。“待从头”三字，充满希望和决心，表明一切努力都是为了“收拾旧山河”。而“朝天阙”则表明，岳飞的忠诚始终如一，即使蒙受冤屈，也依然忠于朝廷。这种“忠君爱国”的思想，是儒家文化的核心，也是岳飞成为民族英雄的精神内核。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 艺术特色 -->
+        <div class="section">
+            <h2 class="section-title"><span class="icon">🏆</span>艺术特色 · 千古名句 · 历史影响</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h4>🎨 艺术特色</h4>
+                    <p><strong>1. 慷慨激昂，气势磅礴：</strong>全词以雷霆万钧之势，一气呵成，如长江大河，奔腾而下，具有强烈的感染力。</p>
+                    <p><strong>2. 语言精炼，字字千钧：</strong>用词精准，如“怒发冲冠”、“壮怀激烈”、“饥餐胡虏肉”等，都成为千古名句。</p>
+                    <p><strong>3. 情感真挚，感人肺腑：</strong>全词发自肺腑，字字泣血，句句含恨，展现了英雄的赤子之心。</p>
+                    <p><strong>4. 结构严谨，层次分明：</strong>上阕写景抒情，下阕言志明誓，层层递进，浑然一体。</p>
+                </div>
+            </div>
+
+            <h3 style="margin: 30px 0 20px; color: #2c3e50;">💎 千古名句（至今仍被广泛引用）</h3>
+            <div class="famous-quotes">
+                <div class="quote-item">
+                    <div class="quote-text">“怒发冲冠，凭栏处、潇潇雨歇。”</div>
+                    <div class="quote-desc">开篇即以雷霆之势，奠定全词悲愤激昂的基调。“怒发冲冠”成为形容极度愤怒的经典成语。</div>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">“三十功名尘与土，八千里路云和月。”</div>
+                    <div class="quote-desc">以宏大的时空意象，展现英雄的壮阔胸怀。功名如尘，征途漫漫，境界高远。</div>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">“莫等闲、白了少年头，空悲切。”</div>
+                    <div class="quote-desc">千古警句，激励无数仁人志士珍惜时光，奋发有为。至今仍是励志名言。</div>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">“壮志饥餐胡虏肉，笑谈渴饮匈奴血。”</div>
+                    <div class="quote-desc">以极端表达展现对敌人的刻骨仇恨，气势磅礴，震撼人心。</div>
+                </div>
+            </div>
+
+            <h3 style="margin: 30px 0 20px; color: #2c3e50;">📚 历代评价与影响</h3>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <h4>明代·沈际飞《草堂诗余正集》</h4>
+                    <p>“胆量、意见、文章悉无今古。有此等文章，而后可以读《满江红》。”</p>
+                </div>
+                <div class="review-card">
+                    <h4>清代·陈廷焯《白雨斋词话》</h4>
+                    <p>“何等气概！何等志向！千载下读之，凛凛有生气焉。”</p>
+                </div>
+                <div class="review-card">
+                    <h4>近代·刘永济《唐五代两宋词简析》</h4>
+                    <p>“此词盖抒其抗金救国之雄心壮志，激昂慷慨，为千古绝唱。”</p>
+                </div>
+                <div class="review-card">
+                    <h4>历史影响</h4>
+                    <p>《满江红》是岳飞精神的集中体现，成为中华民族抵御外侮、精忠报国的精神象征。抗战时期，这首词被广泛传唱，激励无数中华儿女投身抗日救亡运动。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 推荐阅读方式 -->
+        <div class="section" style="padding: 0; overflow: hidden;">
+            <div class="reading-guide">
+                <h3>💡 推荐阅读方式</h3>
+                <ol class="reading-steps">
+                    <li><strong>初读，感受气势：</strong>先通读全词，感受其慷慨激昂的气势和节奏。不必急于理解每个字句，先让情感冲击你。</li>
+                    <li><strong>再读，理解背景：</strong>了解靖康之变、岳飞抗金的历史背景，才能真正理解词中的悲愤与决心。</li>
+                    <li><strong>精读，品味词句：</strong>逐句品味“三十功名尘与土”、“莫等闲、白了少年头”等名句的深刻内涵。</li>
+                    <li><strong>诵读，体会情感：</strong>大声诵读，让词句的节奏和情感融入你的血脉，感受英雄的壮志豪情。</li>
+                    <li><strong>思考，联系现实：</strong>思考岳飞精神在当代的意义，如何将“精忠报国”的精神转化为报效祖国的实际行动。</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <div style="text-align: center; padding: 30px; color: #999; font-size: 0.9rem;">
+            <p>— 深度解读完 —</p>
+        </div>
+    </div>
+</body>
+</html>
